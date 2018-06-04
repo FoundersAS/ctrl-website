@@ -1,0 +1,19 @@
+# .travis.yml
+language: ruby
+sudo: false
+cache:
+  - pip
+before_install:
+  - pip install --user awscli
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: get-ctrl.io
+  region: eu-west-1
+  skip_cleanup: true
+  cache_control: "max-age=21600"
+  on:
+    repo: FoundersAS/ctrl-website
+after_deploy:
+  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
