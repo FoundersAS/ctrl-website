@@ -3,6 +3,10 @@ html {
   font-family: "Maison Neue Mono";
 }
 
+a, a:hover, a:visited, a:active {
+  color: #000;
+}
+
 body {
   width: 476px;
   margin: 0 auto;
