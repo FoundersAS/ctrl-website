@@ -55,6 +55,8 @@ body {
   color: #fff;
   height: 60px;
   width: 344px;
+  border-style: solid;
+  border-color: #f0f0f0;
   border-radius: 6px;
   background: linear-gradient(2.53deg, #494A79 0%, #230A3B 100%);
   font-size: 14px;
